@@ -1,6 +1,6 @@
 package com.dictionary.repository;
 
-public interface IDictionaryRepositoryService {
+public interface IDictionaryRepository {
     String findWord(String name);
 
 
