@@ -12,16 +12,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class ConvertController {
     @Autowired
     private IConvertService convertService;
+
     @GetMapping("/")
-    public String convertion(){
+    public String convertion() {
         return "convert";
     }
 
     @PostMapping("/convertUSD")
-    public String converter(@RequestParam double usd , Model model){
-      double resultChangeUSD = convertService.convert(usd);
-      model.addAttribute("resultChangeUSD",resultChangeUSD);
-      return "convert";
+    public String converter(@RequestParam double usd, Model model) {
+        double resultChangeUSD = convertService.convert(usd);
+        model.addAttribute("resultChangeUSD", resultChangeUSD);
+        return "convert";
     }
 
 

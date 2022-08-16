@@ -8,8 +8,9 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class DictionaryService implements IDictionaryService {
-        @Autowired
-        IDictionaryRepository repositoryService;
+    @Autowired
+    private IDictionaryRepository repositoryService;
+
     @Override
     public String findWord(String name) {
         return repositoryService.findWord(name);

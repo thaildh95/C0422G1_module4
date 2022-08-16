@@ -7,6 +7,6 @@ import org.springframework.stereotype.Service;
 public class ConvertService implements IConvertService {
     @Override
     public double convert(double usd) {
-        return usd*23000 ;
+        return usd * 23000;
     }
 }
