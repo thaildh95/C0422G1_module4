@@ -11,7 +11,7 @@
     <title>$Title$</title>
 </head>
 <body>
-<form action="/calculatate" method="get">
+<form action="/calculate" method="get">
     <input type="number" name="number1" value="0" required>
     <input type="number" name="number2" value="0" required>
     <button type="submit" name="operator" value="addition">addition</button>

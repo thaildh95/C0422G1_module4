@@ -17,7 +17,7 @@ public class CalculateController {
         return "index";
     }
 
-    @GetMapping("/calculatate")
+    @GetMapping("/calculate")
     public String calculate(@RequestParam double number1,
                             @RequestParam double number2,
                             @RequestParam String operator,
