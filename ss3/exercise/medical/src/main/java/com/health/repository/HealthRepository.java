@@ -137,7 +137,7 @@ public class HealthRepository implements IHealthRepository{
 
     @Override
     public List<String> vehicle() {
-        return null;
+        return vehicleList;
     }
 
     @Override
@@ -159,5 +159,47 @@ public class HealthRepository implements IHealthRepository{
     @Override
     public List<String> nationList() {
         return nationList;
+    }
+
+    @Override
+    public HealthDeclare searchById(String id) {
+
+        for (HealthDeclare h: healthDeclares) {
+            if (h.getId().equals(id)){
+                return h;
+            }
+        }return null;
+    }
+
+    @Override
+    public void update(String id, HealthDeclare healthDeclare) {
+
+        for (HealthDeclare h : healthDeclares){
+            if (h.getId().equals(id)){
+                h.setName(healthDeclare.getName());
+                h.setBirth(healthDeclare.getBirth());
+                h.setGender(healthDeclare.getGender());
+                h.setNationality(healthDeclare.getNationality());
+                h.setId(healthDeclare.getId());
+                h.setTravelInformation(healthDeclare.getTravelInformation());
+                h.setVehicle(healthDeclare.getVehicle());
+                h.setSeats(healthDeclare.getSeats());
+                h.setStartDay(healthDeclare.getStartDay());
+                h.setStartMonth(healthDeclare.getStartMonth());
+                h.setStartYear(healthDeclare.getStartYear());
+                h.setEndDay(healthDeclare.getEndDay());
+                h.setEndMonth(healthDeclare.getEndMonth());
+                h.setEndYear(healthDeclare.getEndYear());
+                h.setInfomation(healthDeclare.getInfomation());
+                h.setCity(healthDeclare.getCity());
+
+            }
+        }
+
+    }
+
+    @Override
+    public List<HealthDeclare> showList() {
+        return healthDeclares;
     }
 }

@@ -12,4 +12,7 @@ public interface IHealthRepository {
     List<String> genderList();
     List<String> nationList();
     List<String> vehicle();
+    List<HealthDeclare> showList();
+    HealthDeclare searchById(String id);
+    void update(String id,HealthDeclare healthDeclare);
 }

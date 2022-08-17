@@ -42,7 +42,22 @@ public class HealthService implements IHealthService {
     }
 
     @Override
+    public HealthDeclare searchById(String id) {
+        return healthRepository.searchById(id);
+    }
+
+    @Override
+    public void update(String id, HealthDeclare healthDeclare) {
+        healthRepository.update(id, healthDeclare);
+    }
+
+    @Override
+    public List<HealthDeclare> showList() {
+        return healthRepository.showList();
+    }
+
+    @Override
     public List<String> vehicle() {
-        return null;
+        return healthRepository.vehicle();
     }
 }
