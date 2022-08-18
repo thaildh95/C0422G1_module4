@@ -45,5 +45,9 @@ public class ProductController {
         return "redirect:/";
     }
 
-
+    @GetMapping("/search")
+    public String search(@RequestParam String name,Model model){
+        model.addAttribute("listSearch",productService.searchByName(name));
+        return "search";
+    }
 }

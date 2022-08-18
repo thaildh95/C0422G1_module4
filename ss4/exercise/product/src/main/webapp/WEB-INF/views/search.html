@@ -38,8 +38,8 @@
                     <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
                 </li>
             </ul>
-            <form class="d-flex" action="/search" method="get">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="name">
+            <form class="d-flex">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
         </div>
@@ -56,7 +56,7 @@
         <th>Update</th>
         <th>Delete</th>
     </tr>
-    <tr th:each="product :${productList}">
+    <tr th:each="product :${listSearch}">
         <td th:text="${product.getId()}"></td>
         <td th:text="${product.getProductName()}"></td>
         <td th:text="${product.getProductPrice()}"></td>
@@ -69,9 +69,9 @@
         </button></td>
 
         <td> <button th:onclick="|infoAllToModal('${product.id}','${product.productName}','${product.getProductPrice()}','${product.getProductDescribe()}','${product.getProducer()}')|"   class="btn btn-danger"
-                    type="button" data-bs-toggle="modal" data-bs-target="#showModal">
-        Info
-    </button></td>
+                     type="button" data-bs-toggle="modal" data-bs-target="#showModal">
+            Info
+        </button></td>
     </tr>
     <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel"
          aria-hidden="true">

@@ -45,6 +45,16 @@ public class ProductRepository implements IProductRepository {
     }
 
     @Override
+    public List<Product> searchByName(String name) {
+        List<Product> products = new ArrayList<>();
+        for (Product p: productMap.values()) {
+            if (p.getProductName().contains(name)){
+                products.add(p);
+            }
+        }return  products;
+    }
+
+    @Override
     public void remove(String id) {
         productMap.remove(id);
     }

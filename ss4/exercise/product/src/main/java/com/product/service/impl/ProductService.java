@@ -27,6 +27,11 @@ public class ProductService implements IProductService {
     }
 
     @Override
+    public List<Product> searchByName(String name) {
+        return productRepository.searchByName(name);
+    }
+
+    @Override
     public void update(String id, Product customer) {
         productRepository.update(id,customer);
 
