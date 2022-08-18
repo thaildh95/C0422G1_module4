@@ -1,4 +1,5 @@
 package com.product.controiler;
+
 import com.product.model.Product;
 import com.product.service.IProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,41 +14,47 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class ProductController {
     @Autowired
     private IProductService productService;
+
     @GetMapping("/")
-    public String goIndex(Model model){
-        model.addAttribute("productList",productService.findAll());
+    public String goIndex(Model model) {
+        model.addAttribute("productList", productService.findAll());
         return "list";
     }
+
     @GetMapping("/create")
-    public String addProduct(Model model){
+    public String addProduct(Model model) {
         model.addAttribute("product", new Product());
         return "create";
     }
+
     @PostMapping("/create")
-    public String createProduct(Product product,Model model){
+    public String createProduct(Product product, Model model) {
         productService.save(product);
 //        model.addAttribute("productList",productService.findAll());
         return "redirect:/";
     }
+
     @GetMapping("/update/{id}")
-    public String updateProduct(Model model,@PathVariable String id){
-       model.addAttribute("product",productService.findById(id));
+    public String updateProduct(Model model, @PathVariable String id) {
+        model.addAttribute("product", productService.findById(id));
         return "/update";
     }
+
     @PostMapping("/update")
-    public String updateProduct(Product product){
-        productService.update(product.getId(),product);
+    public String updateProduct(Product product) {
+        productService.update(product.getId(), product);
         return "redirect:/";
     }
+
     @GetMapping("/delete")
-    public  String delete(@RequestParam String id){
+    public String delete(@RequestParam String id) {
         productService.remove(id);
         return "redirect:/";
     }
 
     @GetMapping("/search")
-    public String search(@RequestParam String name,Model model){
-        model.addAttribute("listSearch",productService.searchByName(name));
+    public String search(@RequestParam String name, Model model) {
+        model.addAttribute("listSearch", productService.searchByName(name));
         return "search";
     }
 }
