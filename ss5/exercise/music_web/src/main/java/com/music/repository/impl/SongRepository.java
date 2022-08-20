@@ -6,7 +6,6 @@ import org.springframework.stereotype.Repository;
 import javax.persistence.EntityTransaction;
 import javax.persistence.TypedQuery;
 import java.util.List;
-import java.util.Map;
 
 @Repository
 public class SongRepository implements ISongRepository {

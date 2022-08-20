@@ -16,8 +16,8 @@ public class ProductController {
     private IProductService productService;
 
     @GetMapping("/")
-    public String goIndex(Model model) {
-        model.addAttribute("productList", productService.findAll());
+    public String goIndex(@RequestParam(required = false,defaultValue = "") String productName,Model model) {
+        model.addAttribute("productList", this.productService.findAll(productName));
         return "list";
     }
 
@@ -42,7 +42,7 @@ public class ProductController {
 
     @PostMapping("/update")
     public String updateProduct(Product product) {
-        productService.update(product.getId(), product);
+        productService.update(product);
         return "redirect:/";
     }
 
