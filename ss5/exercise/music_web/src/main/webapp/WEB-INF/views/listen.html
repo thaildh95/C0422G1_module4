@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Nghe</title>
+</head>
+<body>
+<div>
+    <span>Tên:</span><span th:text="${song.name}"></span>
+</div>
+<div>
+    <span>Tên:</span><span th:text="${song.artist}"></span>
+</div>
+<div>
+    <audio controls>
+        <source th:src="@{'CODEGYM/module_4/ss5/exercise' + ${song.path}}">
+    </audio>
+</div>
+</body>
+</html>
