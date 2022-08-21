@@ -1,4 +1,5 @@
 package com.music.repository.impl;
+
 import com.music.model.Song;
 import com.music.repository.ISongRepository;
 import org.springframework.stereotype.Repository;
@@ -16,7 +17,7 @@ public class SongRepository implements ISongRepository {
 
     @Override
     public List<Song> findAll() {
-        TypedQuery<Song> typedQuery = BaseRepository.entityManager.createQuery(FIND_ALL,Song.class) ;
+        TypedQuery<Song> typedQuery = BaseRepository.entityManager.createQuery(FIND_ALL, Song.class);
         return typedQuery.getResultList();
     }
 
@@ -30,9 +31,9 @@ public class SongRepository implements ISongRepository {
 
     @Override
     public Song findById(int id) {
-        TypedQuery<Song> typedQuery = BaseRepository.entityManager.createQuery(FIND_BY_ID,Song.class);
-        typedQuery.setParameter("id",id);
-       return typedQuery.getSingleResult();
+        TypedQuery<Song> typedQuery = BaseRepository.entityManager.createQuery(FIND_BY_ID, Song.class);
+        typedQuery.setParameter("id", id);
+        return typedQuery.getSingleResult();
     }
 
     @Override

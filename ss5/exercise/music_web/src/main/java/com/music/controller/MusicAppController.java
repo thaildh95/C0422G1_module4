@@ -27,61 +27,66 @@ public class MusicAppController {
     private ISongService service;
 
     @GetMapping("/")
-    public String goHome(Model model){
-        model.addAttribute("songList",service.findAll());
+    public String goHome(Model model) {
+        model.addAttribute("songList", service.findAll());
         return "home";
     }
+
     @GetMapping("/add")
-    public String goAdd(Model model){
-        model.addAttribute("songForm" , new SongForm());
+    public String goAdd(Model model) {
+        model.addAttribute("songForm", new SongForm());
         return "add";
     }
 
     @PostMapping("/save")
-    public String goSave(@ModelAttribute("songForm")SongForm songForm){
+    public String goSave(@ModelAttribute("songForm") SongForm songForm) {
         MultipartFile multipartFile = songForm.getPath();
         String fileName = multipartFile.getOriginalFilename();
         try {
-            FileCopyUtils.copy(multipartFile.getBytes(),new File(fileUpload + fileName));
+            FileCopyUtils.copy(multipartFile.getBytes(), new File(fileUpload + fileName));
 
-        }catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
-        Song song = new Song(songForm.getName(), songForm.getArtist(),songForm.getType(),fileName);
+        Song song = new Song(songForm.getName(), songForm.getArtist(), songForm.getType(), fileName);
         service.save(song);
         return "redirect:/";
     }
+
     @GetMapping("/update")
-    public String goUpdate(@RequestParam int id, Model model){
+    public String goUpdate(@RequestParam int id, Model model) {
         Song song = service.findById(id);
         SongForm songForm = new SongForm();
-        BeanUtils.copyProperties(songForm,song);
-        model.addAttribute("songForm",songForm);
+        BeanUtils.copyProperties(songForm, song);
+        model.addAttribute("songForm", songForm);
         return "update";
     }
+
     @PostMapping("/update")
-    public String update(@ModelAttribute SongForm songForm){
+    public String update(@ModelAttribute SongForm songForm) {
         Song afterUpdateSong = service.findById(songForm.getId());
         MultipartFile multipartFile = songForm.getPath();
         String fileName = multipartFile.getOriginalFilename();
         try {
-            FileCopyUtils.copy(multipartFile.getBytes(),new File(fileUpload + fileName));
+            FileCopyUtils.copy(multipartFile.getBytes(), new File(fileUpload + fileName));
 
-        }catch (IOException e){
+        } catch (IOException e) {
             e.printStackTrace();
         }
-        Song song = new Song(songForm.getName(), songForm.getArtist(),songForm.getType(),fileName);
+        Song song = new Song(songForm.getName(), songForm.getArtist(), songForm.getType(), fileName);
         service.save(song);
         return "redirect:/";
     }
+
     @PostMapping("/delete")
-    public String delete(@RequestParam int id){
+    public String delete(@RequestParam int id) {
         service.delete(id);
         return "redirect:/";
     }
+
     @GetMapping("/listen")
-    public String listen(@RequestParam int id , Model model){
-        model.addAttribute("song",service.findById(id));
+    public String listen(@RequestParam int id, Model model) {
+        model.addAttribute("song", service.findById(id));
         return "listen";
     }
 }

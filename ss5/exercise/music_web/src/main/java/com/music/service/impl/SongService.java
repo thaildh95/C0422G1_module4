@@ -1,4 +1,5 @@
 package com.music.service.impl;
+
 import com.music.model.Song;
 import com.music.repository.ISongRepository;
 import com.music.service.ISongService;
@@ -11,6 +12,7 @@ import java.util.List;
 public class SongService implements ISongService {
     @Autowired
     private ISongRepository repository;
+
     @Override
     public List<Song> findAll() {
         return repository.findAll();
@@ -29,7 +31,7 @@ public class SongService implements ISongService {
 
     @Override
     public void update(Song song) {
-     repository.update(song);
+        repository.update(song);
     }
 
     @Override

@@ -1,7 +1,6 @@
 package com.music.model;
 
 import org.springframework.web.multipart.MultipartFile;
-
 import javax.persistence.*;
 
 @Entity
