@@ -16,8 +16,8 @@ public class ProductController {
     private IProductService productService;
 
     @GetMapping("/")
-    public String goIndex(@RequestParam(required = false,defaultValue = "") String productName,Model model) {
-        model.addAttribute("productList", this.productService.findAll(productName));
+    public String goIndex(@RequestParam(required = false, defaultValue = "") String name, Model model) {
+        model.addAttribute("productList", this.productService.findAll(name));
         return "list";
     }
 
@@ -30,12 +30,11 @@ public class ProductController {
     @PostMapping("/create")
     public String createProduct(Product product, Model model) {
         productService.save(product);
-//        model.addAttribute("productList",productService.findAll());
         return "redirect:/";
     }
 
     @GetMapping("/update/{id}")
-    public String updateProduct(Model model, @PathVariable String id) {
+    public String updateProduct(Model model, @PathVariable int id) {
         model.addAttribute("product", productService.findById(id));
         return "/update";
     }
@@ -47,14 +46,10 @@ public class ProductController {
     }
 
     @GetMapping("/delete")
-    public String delete(@RequestParam String id) {
+    public String delete(@RequestParam int id) {
         productService.remove(id);
         return "redirect:/";
     }
 
-    @GetMapping("/search")
-    public String search(@RequestParam String name, Model model) {
-        model.addAttribute("listSearch", productService.searchByName(name));
-        return "search";
-    }
+
 }

@@ -24,7 +24,7 @@ public class ProductService implements IProductService {
     }
 
     @Override
-    public Product findById(String id) {
+    public Product findById(int id) {
         return productRepository.findById(id);
     }
 
@@ -34,13 +34,13 @@ public class ProductService implements IProductService {
     }
 
     @Override
-    public void update( Product product) {
+    public void update(Product product) {
         productRepository.update(product);
 
     }
 
     @Override
-    public void remove(String id) {
+    public void remove(int id) {
         productRepository.remove(id);
 
     }

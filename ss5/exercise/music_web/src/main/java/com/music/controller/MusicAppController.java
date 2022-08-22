@@ -23,6 +23,7 @@ public class MusicAppController {
     @Value("${file-upload}")
     private String fileUpload;
 
+
     @Autowired
     private ISongService service;
 
@@ -49,6 +50,7 @@ public class MusicAppController {
             e.printStackTrace();
         }
         Song song = new Song(songForm.getName(), songForm.getArtist(), songForm.getType(), fileName);
+        song.setPath(fileName);
         service.save(song);
         return "redirect:/";
     }

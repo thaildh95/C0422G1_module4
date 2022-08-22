@@ -1,7 +1,9 @@
 package com.product.repository.impl;
+
 import com.product.model.Product;
 import com.product.repository.IProductRepository;
 import org.springframework.stereotype.Repository;
+
 import javax.persistence.EntityTransaction;
 import javax.persistence.TypedQuery;
 import java.util.List;
@@ -14,12 +16,11 @@ public class ProductRepository implements IProductRepository {
     private final String FIND_ALL = "select p from Product p where lower(p.productName) like lower(:name)";
 
 
-
     @Override
     public List<Product> findAll(String name) {
-        TypedQuery<Product> typedQuery = BaseRepository.entityManager.createQuery(FIND_ALL,Product.class);
+        TypedQuery<Product> typedQuery = BaseRepository.entityManager.createQuery(FIND_ALL, Product.class);
         typedQuery.setParameter("name", "%" + name + "%");
-         return  typedQuery.getResultList();
+        return typedQuery.getResultList();
 
     }
 
@@ -32,9 +33,9 @@ public class ProductRepository implements IProductRepository {
     }
 
     @Override
-    public Product findById(String id) {
-        TypedQuery<Product> typedQuery = BaseRepository.entityManager.createQuery(FIND_BY_ID,Product.class);
-        typedQuery.setParameter("id",id);
+    public Product findById(int id) {
+        TypedQuery<Product> typedQuery = BaseRepository.entityManager.createQuery(FIND_BY_ID, Product.class);
+        typedQuery.setParameter("id", id);
         return typedQuery.getSingleResult();
 
     }
@@ -49,14 +50,14 @@ public class ProductRepository implements IProductRepository {
 
     @Override
     public List<Product> searchByName(String name) {
-        TypedQuery<Product> typedQuery = BaseRepository.entityManager.createQuery(FIND_ALL,Product.class);
-        typedQuery.setParameter("name",name);
+        TypedQuery<Product> typedQuery = BaseRepository.entityManager.createQuery(FIND_ALL, Product.class);
+        typedQuery.setParameter("name", name);
 
         return typedQuery.getResultList();
     }
 
     @Override
-    public void remove(String id) {
+    public void remove(int id) {
         EntityTransaction entityTransaction = BaseRepository.entityManager.getTransaction();
         entityTransaction.begin();
         BaseRepository.entityManager.remove(findById(id));

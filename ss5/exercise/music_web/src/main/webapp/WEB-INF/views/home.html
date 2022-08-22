@@ -8,12 +8,13 @@
 </head>
 <body>
 <a href="/add"><button>Thêm mới bài hát</button></a>
-<table>
+<table class="table table-hover">
     <tr>
         <td>#</td>
         <td>id</td>
         <td>Tên</td>
         <td>Nghệ sĩ</td>
+        <td>Link</td>
         <td>Thể loại</td>
     </tr>
     <tr th:each="song,status:${songList}">
@@ -21,6 +22,11 @@
         <td th:text="${song.id}"></td>
         <td th:text="${song.name}"></td>
         <td th:text="${song.artist}"></td>
+        <td>
+            <audio controls>
+                <source th:src="@{'music/' +${song.path}}">
+            </audio>
+        </td>
         <td th:text="${song.type}"></td>
         <td><a th:href="@{/update(id=${song.id})}"><button>Sửa</button></a></td>
         <td><button type="button" data-bs-toggle="modal" data-bs-target="#exampleModal"
