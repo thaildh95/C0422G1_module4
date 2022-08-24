@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+</head>
+<body>
+<div th:replace="~{header::header}">
+
+</div>
+<a href="/create">
+    <button>Thêm mới</button>
+</a>
+<div class="row container-fluid" >
+    <div class="col-lg-12">
+        <form action="/" method="get">
+            <div class="input-group">
+                <div class="form-outline">
+                    <input type="search" id="form1" placeholder="Nội dung" name="detail" th:value="${detailValue}"  class="form-control"/>
+                    <label class="form-label" for="form1"></label>
+                </div>
+                <div class="form-outline">
+                    <input type="search" placeholder="Tiêu đề" id="form2" name="title" th:value="${titleValue}"  class="form-control"/>
+                    <label class="form-label" for="form2"></label>
+                </div>
+                <button type="submit" class="btn btn-primary">Tìm kiếm
+                </button>
+            </div>
+        </form>
+        <form action="/" method="get">
+            <a th:href="@{/(sort = 'title',title=${title})}" >sort title</a>
+            <a th:href="@{/(sort = 'detail',detail=${detail})}" >sort detail</a>
+
+        </form>
+    </div>
+</div>
+
+<table class="table table-hover">
+    <tr>
+        <th>#</th>
+        <th>id</th>
+        <th>tiêu đề</th>
+        <th>nội dung</th>
+        <th>chủ đề</th>
+        <th>tác giả</th>
+        <th colspan="3"></th>
+
+    </tr>
+    <tr th:each="blog,status:${blogList}">
+        <td th:text="${status.count}"></td>
+        <td th:text="${blog.id}"></td>
+        <td th:text="${blog.title}"></td>
+        <td th:text="${blog.detail}"></td>
+        <td th:text="${blog.catalogy.nameCatalogy}"></td>
+        <td th:text="${blog.author}"></td>
+
+
+        <td><a th:href="@{/update(id=${blog.id})}">
+            <button>Sửa</button>
+        </a></td>
+
+        <td>
+            <button type="button" data-bs-toggle="modal" data-bs-target="#delete"
+                    th:attr="onclick=|callModal('${blog.id}','${blog.title}','${blog.detail}','${blog.author}')|">xóa
+            </button>
+        </td>
+
+        <td>
+            <button type="button" data-bs-toggle="modal" data-bs-target="#detail"
+                    th:attr="onclick=|showModal('${blog.id}','${blog.title}','${blog.detail}','${blog.author}')|">detail
+            </button>
+        </td>
+
+    </tr>
+</table>
+<div class="row">
+    <div class="col-lg-12">
+        <a th:href="@{/(page=${blogList.number -1},
+                    sort=${sortValue},
+                    detail = ${detailValue},
+                    title = ${titleValue})}"
+           th:if="${blogList.hasPrevious()}">
+            Previous
+        </a>
+        <span th:text="${blogList.number + 1}"></span>/
+        <span th:text="${blogList.totalPages}"></span>
+
+        <a th:href="@{/(page=${blogList.number+1},
+                            sort=${sortValue},
+                    detail = ${detailValue},
+                    title = ${titleValue})}"
+           th:if="${blogList.hasNext()}">
+            Next
+        </a>
+    </div>
+</div>
+<form action="/delete" method="post">
+    <div class="modal fade" id="delete" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h3>Bạn có muốn xóa bài hát chủ đề này không ?</h3>
+                    <div class="input-group flex-nowrap">
+                        <span class="input-group-text" id="addon-wrapping1">ID</span>
+                        <input type="text" name="id" readonly id="idBlog" class="form-control" placeholder="Username"
+                               aria-label="Username" aria-describedby="addon-wrapping">
+                    </div>
+                    <div class="input-group flex-nowrap">
+                        <span class="input-group-text" id="addon-wrapping2">Title</span>
+                        <input type="text" name="title" readonly id="titleBlog" class="form-control"
+                               placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+                    </div>
+                    <div class="input-group flex-nowrap">
+                        <span class="input-group-text" id="addon-wrapping3">Detail</span>
+                        <input type="text" name="detail" readonly id="detailBlog" class="form-control"
+                               placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+                    </div>
+                    <div class="input-group flex-nowrap">
+                        <span class="input-group-text" id="addon-wrapping4">Author</span>
+                        <input type="text" name="author" readonly id="author" class="form-control"
+                               placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Không</button>
+                    <button type="submit" class="btn btn-primary">Có</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<div class="modal fade" id="detail" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel1">Modal title</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <h3>Detail</h3>
+                <div class="input-group flex-nowrap">
+                    <span class="input-group-text" id="addon-wrapping4">ID</span>
+                    <input type="text" name="id" readonly id="showIdBlog" class="form-control" placeholder="Username"
+                           aria-label="Username" aria-describedby="addon-wrapping">
+                </div>
+                <div class="input-group flex-nowrap">
+                    <span class="input-group-text" id="addon-wrapping5">Title</span>
+                    <input type="text" name="title" readonly id="showTitleBlog" class="form-control"
+                           placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+                </div>
+                <div class="input-group flex-nowrap">
+                    <span class="input-group-text" id="addon-wrapping6">Detail</span>
+                    <input type="text" name="detail" readonly id="showDetailBlog" class="form-control"
+                           placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+                </div>
+                <div class="input-group flex-nowrap">
+                    <span class="input-group-text" id="addon-wrapping7">Author</span>
+                    <input type="text" name="author" readonly id="showAuthor" class="form-control"
+                           placeholder="Username" aria-label="Username" aria-describedby="addon-wrapping">
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js"
+            integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13"
+            crossorigin="anonymous"></script>
+
+    <script>
+        function callModal(id, title, detail, author) {
+            document.getElementById("idBlog").value = id;
+            document.getElementById("titleBlog").value = title;
+            document.getElementById("detailBlog").value = detail;
+            document.getElementById("author").value = author;
+
+        }
+    </script>
+    <script>
+        function showModal(id, title, detail, author) {
+            document.getElementById("showIdBlog").value = id;
+            document.getElementById("showTitleBlog").value = title;
+            document.getElementById("showDetailBlog").value = detail;
+            document.getElementById("showAuthor").value = author;
+
+        }
+    </script>
+</div>
+<div th:replace="~{footer::footer}"></div>
+</body>
+</html>
