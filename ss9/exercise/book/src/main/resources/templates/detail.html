@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Create</title>
+    <link rel="stylesheet" href="/bootstrap-5.0.2-dist/css/bootstrap.css">
+
+</head>
+<body>
+<h1 class="text-center text-danger"> Detail Book</h1>
+<div class="container">
+    <form action="/borrow" th:object="${book}" method="post">
+        <div>
+            <label class="form-label">ID :</label>
+            <input class="form-control" readonly type="text" th:field="*{id}"/>
+
+        </div>
+        <div>
+            <label class="form-label">Name Of Book:</label>
+            <input class="form-control" type="text" th:field="*{name}"/>
+        </div>
+        <div>
+            <label class="form-label">Content :</label>
+            <input class="form-control" type="text" th:field="*{content}"/>
+        </div>
+        <div>
+            <label class="form-label">Author :</label>
+            <input class="form-control" type="text" th:field="*{author}"/>
+        </div>
+        <div><input class="m-3 btn btn-danger" type="submit" value="Borrow"></div>
+    </form>
+</div>
+<script src="/bootstrap-5.0.2-dist/js/bootstrap.js"></script>
+
+</body>
+</html>
