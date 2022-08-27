@@ -8,4 +8,5 @@ public interface ILibraryService {
     List<Library> findAll();
     Library findById(int id);
     Library save(Library library);
+    void delete(int id);
 }

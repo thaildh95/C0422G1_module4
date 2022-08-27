@@ -1,0 +1,81 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Title</title>
+    <link rel="stylesheet" href="/bootstrap-5.0.2-dist/css/bootstrap.css">
+    <style>
+        body{
+            background-image: url("https://images.pexels.com/photos/1024967/pexels-photo-1024967.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1");
+        }
+    </style>
+</head>
+
+<body>
+<div th:replace="head::head"></div>
+<div class="container">
+    <div class="row ">
+        <div class="col-lg-12">
+            <div id="carouselExampleCaptions" class="carousel slide h-100" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <img src="https://tbb-prod-apac.imgix.net/attachments/room_type_photos/images/722806/722806/63984552_XL.jpg?auto=format,compress&fit=crop&crop=entropy&w=1322&q=75" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Phòng View Biển</h5>
+                            <p>cảnh quan tuyệt đẹp về đêm</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://tbb-prod-apac.imgix.net/attachments/room_type_photos/images/723970/723970/FV_Bathroom1_Two_Bedroom_Villa.jpg?auto=format,compress&fit=crop&crop=entropy&w=1322&q=75" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Phòng Tắm</h5>
+                            <p>tiện nghi như ở nhà</p>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="https://tbb-prod-apac.imgix.net/attachments/room_type_photos/images/723975/723975/FV_Livingroom_Two_Bedroom_Villa.jpg?auto=format,compress&fit=crop&crop=entropy&w=1322&q=75" class="d-block w-100" alt="...">
+                        <div class="carousel-caption d-none d-md-block">
+                            <h5>Phòng Khách</h5>
+                            <p>tiện nghi như ở nhà</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row container"></div>
+<div class="col-lg-12 text-center">
+    <h2 class="text-center">CÁC LOẠI PHÒNG</h2>
+    <p class="text-center w-auto">Khu nghỉ dưỡng có 196 phòng được thiết kế theo
+        phong cách truyền thống Việt Nam kết hợp với phong cách Pháp,
+        2 tòa nhà 4 tầng có hướng nhìn ra biển, nhìn ra hồ bơi trong xanh và
+        những khu vườn nhiệt đới xanh tươi mát. Ngoài ra, khu nghỉ dưỡng Furama
+        còn cung cấp các liệu pháp spa, phòng xông hơi ướt, phòng xông hơi khô,
+        dịch vụ mát-xa cạnh hồ bơi, các dịch vụ thể thao dưới nước và các lớp tập yoga và Thái
+        Cực Quyền trên bãi biển.</p>
+</div>
+
+</div>
+<div th:replace="foot::foot"></div>
+<div class="row">
+    <div class="col-lg-12"></div>
+</div>
+
+<script src="/bootstrap-5.0.2-dist/js/bootstrap.js"></script>
+<script src="/bootstrap-5.0.2-dist/jquery/jquery-3.6.0.min.js"></script>
+</body>
+
+</html>

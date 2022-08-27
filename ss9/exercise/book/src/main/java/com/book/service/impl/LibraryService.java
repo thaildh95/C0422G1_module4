@@ -19,6 +19,11 @@ public class LibraryService implements ILibraryService {
     }
 
     @Override
+    public void delete(int id) {
+
+    }
+
+    @Override
     public Library findById(int id) {
         return repository.findById(id).get();
     }
