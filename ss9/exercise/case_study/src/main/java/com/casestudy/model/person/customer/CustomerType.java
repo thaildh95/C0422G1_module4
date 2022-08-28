@@ -1,19 +1,23 @@
 package com.casestudy.model.person.customer;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "customer_type")
 public class CustomerType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int typeCustomerId;
+    private Integer typeCustomerId;
     private String customerTypeName;
+
+    @OneToMany(mappedBy = "customerType")
+    private List<Customer> customerList;
 
     public CustomerType() {
     }
 
-    public CustomerType(int typeCustomerId, String customerTypeName) {
+    public CustomerType(Integer typeCustomerId, String customerTypeName) {
         this.typeCustomerId = typeCustomerId;
         this.customerTypeName = customerTypeName;
     }

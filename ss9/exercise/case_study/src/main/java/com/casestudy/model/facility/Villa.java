@@ -1,4 +1,4 @@
-package com.casestudy.model.service;
+package com.casestudy.model.facility;
 
 public class Villa extends Service {
     private String roomStandar;
