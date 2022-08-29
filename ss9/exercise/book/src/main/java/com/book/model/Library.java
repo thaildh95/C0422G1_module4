@@ -8,10 +8,15 @@ public class Library {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
+
     private String name;
+
     private int count;
+
     private int total;
+
     private String content;
+
     private String author;
 
     public Library() {

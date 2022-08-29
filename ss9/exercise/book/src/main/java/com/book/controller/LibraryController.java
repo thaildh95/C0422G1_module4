@@ -21,12 +21,14 @@ public class LibraryController {
         return "/home";
 
     }
+
     @GetMapping("/detail")
     public String goDetail(Model model, @RequestParam int id){
 
         model.addAttribute("book",service.findById(id));
         return "/detail";
     }
+
     @PostMapping("/borrow")
     public String borrow(Model model,@RequestParam int id) throws Exception {
         Library libraries = service.findById(id);
@@ -41,6 +43,7 @@ public class LibraryController {
         service.save(libraries);
         return "redirect:/";
     }
+
     @GetMapping("/pay")
     public String goPay(){
         return "/pay";
@@ -59,8 +62,9 @@ public class LibraryController {
         libraries.setCount(libraries.getCount()+1);
         service.save(libraries);
         model.addAttribute("mess","trả thành công");
-        return "redirect:/home";
+        return "redirect:/";
     }
+
     @ExceptionHandler(value =  Exception.class)
     public String errors(){
         return "errors";

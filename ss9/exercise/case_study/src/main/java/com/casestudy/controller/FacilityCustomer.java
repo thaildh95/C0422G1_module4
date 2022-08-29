@@ -1,2 +1,5 @@
-package com.casestudy.controller;public class FacilityCustomer {
+package com.casestudy.controller;
+
+public class FacilityCustomer {
+
 }

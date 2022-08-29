@@ -61,17 +61,17 @@
             <button>Sửa</button>
         </a></td>
 
-        <td>
-            <button type="button" data-bs-toggle="modal" data-bs-target="#delete"
-                    th:attr="onclick=|callModal('${blog.id}','${blog.title}','${blog.detail}','${blog.author}')|">xóa
-            </button>
-        </td>
+            <td>
+                <button type="button" data-bs-toggle="modal" data-bs-target="#delete"
+                        th:attr="onclick=|callModal('${blog.id}','${blog.title}','${blog.detail}','${blog.author}')|">xóa
+                </button>
+            </td>
 
-        <td>
-            <button type="button" data-bs-toggle="modal" data-bs-target="#detail"
-                    th:attr="onclick=|showModal('${blog.id}','${blog.title}','${blog.detail}','${blog.author}')|">detail
-            </button>
-        </td>
+            <td>
+                <button type="button" data-bs-toggle="modal" data-bs-target="#detail"
+                        th:attr="onclick=|showModal('${blog.id}','${blog.title}','${blog.detail}','${blog.author}')|">detail
+                </button>
+            </td>
 
     </tr>
 </table>

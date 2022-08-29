@@ -6,6 +6,7 @@ import com.casestudy.service.ICustomerTypeService;
 import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,8 +23,16 @@ public class CustomerController {
     private ICustomerTypeService typeService;
 
     @GetMapping("")
-    public  String goCustomerList(Model model){
-        model.addAttribute("customerList", service.findAll());
+    public  String goCustomerList(@PageableDefault(value = 4) Pageable pageable,
+            @RequestParam Optional<String> name,
+            Model model){
+        for(Sort.Order order : pageable.getSort()){
+            model.addAttribute("sortValue",order.getProperty());
+        }
+
+        String nameValue = name.orElse("");
+        model.addAttribute("nameValue", nameValue);
+        model.addAttribute("customerList", service.findAllByName(nameValue,pageable));
         return "/customer/list";
     }
     @PostMapping("/delete")

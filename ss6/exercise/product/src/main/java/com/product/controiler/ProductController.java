@@ -3,12 +3,13 @@ package com.product.controiler;
 import com.product.model.Product;
 import com.product.service.IProductService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.Optional;
 
 @Controller
 public class ProductController {
@@ -16,8 +17,13 @@ public class ProductController {
     private IProductService productService;
 
     @GetMapping("/")
-    public String goIndex(@RequestParam(required = false, defaultValue = "") String name, Model model) {
-        model.addAttribute("productList", this.productService.findAll(name));
+    public String goIndex(Model model,
+                          @PageableDefault(value = 4) Pageable pageable,
+                          @RequestParam Optional<String> name
+                          ) {
+        String nameValue = name.orElse("");
+        model.addAttribute("productList", productService.findAllProduct(nameValue,pageable));
+        model.addAttribute("nameValue",nameValue);
         return "list";
     }
 
@@ -38,16 +44,15 @@ public class ProductController {
         model.addAttribute("product", productService.findById(id));
         return "/update";
     }
-
     @PostMapping("/update")
-    public String updateProduct(Product product) {
-        productService.update(product);
+    public String update(@ModelAttribute Product product,Model model){
+        model.addAttribute("product",productService.save(product));
         return "redirect:/";
     }
 
     @GetMapping("/delete")
     public String delete(@RequestParam int id) {
-        productService.remove(id);
+        productService.delete(id);
         return "redirect:/";
     }
 

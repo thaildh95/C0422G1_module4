@@ -35,6 +35,7 @@ public class BlogController {
         for (Sort.Order order : pageable.getSort()) {
             model.addAttribute("sortValue", order.getProperty());
         }
+
         String detailValue = detail.orElse("");
         String titleValue = title.orElse("");
         model.addAttribute("blogList", service.findAllByDetailAndTitle(detailValue, titleValue, pageable));

@@ -62,31 +62,28 @@
         <th>Delete</th>
     </tr>
     <tr th:each="product :${productList}">
-        <td th:text="${product.getId()}"></td>
-        <td th:text="${product.getProductName()}"></td>
-        <td th:text="${product.getProductPrice()}"></td>
-        <td th:text="${product.getProductDescribe()}"></td>
-        <td th:text="${product.getProducer()}"></td>
+        <td th:text="${product.id}"></td>
+        <td th:text="${product.productName}"></td>
+        <td th:text="${product.productPrice}"></td>
+        <td th:text="${product.productDescribe}"></td>
+        <td th:text="${product.producer}"></td>
         <td><a th:href="@{/update/{id}(id=${product.id})}">Update</a></td>
         <td>
-            <button th:onclick="|infoToModal('${product.id}','${product.productName}')|" class="btn btn-danger"
-                    type="button" data-bs-toggle="modal" data-bs-target="#deleteModal">
-                Delete
+            <button type="button" data-bs-toggle="modal" data-bs-target="#deleteModal"
+                    th:attr="onclick=|callModal('${product.id}','${product.productName}')|">xóa
             </button>
         </td>
 
         <td>
-            <button th:onclick="|infoAllToModal('${product.id}','${product.productName}','${product.getProductPrice()}','${product.getProductDescribe()}','${product.getProducer()}')|"
-                    class="btn btn-danger"
-                    type="button" data-bs-toggle="modal" data-bs-target="#showModal">
-                Info
+            <button type="button" data-bs-toggle="modal" data-bs-target="#showModal"
+                    th:attr="onclick=|showModal('${product.id}','${product.productName}','${product.productPrice}','${product.productDescribe}','${product.producer}')|">detail
             </button>
         </td>
     </tr>
     <div class="modal fade" id="deleteModal" tabindex="-1" aria-labelledby="exampleModalLabel"
          aria-hidden="true">
         <div class="modal-dialog">
-            <form action="/delete/" method="get">
+            <form action="/delete" method="get">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h2 class="modal-title text-danger" id="exampleModalLabel">Product</h2>
@@ -114,7 +111,7 @@
     <div class="modal fade" id="showModal" tabindex="-1" aria-labelledby="exampleModalLabel1"
          aria-hidden="true">
         <div class="modal-dialog">
-            <form action="/delete/" method="get">
+            <form action="/delete" method="get">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h2 class="modal-title text-danger" id="exampleModalLabel1">Product</h2>
@@ -126,12 +123,12 @@
                         <input type="text" readonly name="id" id="showId" class="form-control"><br>
                         <b>Product Name :</b>
                         <input type="text" readonly name="name" id="showName" class="form-control"><br>
-                        <b>Product Name :</b>
-                        <input type="text" readonly name="name" id="showPrice" class="form-control"><br>
-                        <b>Product Name :</b>
-                        <input type="text" readonly name="name" id="showDescribe" class="form-control"><br>
-                        <b>Product Name :</b>
-                        <input type="text" readonly name="name" id="showProducer" class="form-control"><br>
+                        <b>Product Price :</b>
+                        <input type="text" readonly name="price" id="showPrice" class="form-control"><br>
+                        <b>Product Describe :</b>
+                        <input type="text" readonly name="describe" id="showDescribe" class="form-control"><br>
+                        <b>Product Producer :</b>
+                        <input type="text" readonly name="producer" id="showProducer" class="form-control"><br>
 
 
                     </div>
@@ -143,18 +140,35 @@
         </div>
     </div>
 </table>
+<div class="row">
+    <div class="col-lg-12">
+        <a th:href="@{/(page=${productList.number -1},
+                    name = ${nameValue})}"
+           th:if="${productList.hasPrevious()}">
+            Previous
+        </a>
+        <span th:text="${productList.number + 1}"></span>/
+        <span th:text="${productList.totalPages}"></span>
+
+        <a th:href="@{/(page=${productList.number +1},
+                    name = ${nameValue})}"
+           th:if="${productList.hasNext()}">
+            Next
+        </a>
+    </div>
+</div>
 <script>
-    function infoToModal(id, name) {
+    function callModal(id, name) {
         document.getElementById("deleteId").value = id;
         document.getElementById("deleteName").value = name;
     }
 
-    function infoAllToModal(id, name, price, describe, producer) {
+    function showModal(id, name, price, describe, producer) {
         document.getElementById("showId").value = id;
         document.getElementById("showName").value = name;
-        document.getElementById("showPrice").value = name;
-        document.getElementById("showDescribe").value = name;
-        document.getElementById("showProducer").value = name;
+        document.getElementById("showPrice").value = price;
+        document.getElementById("showDescribe").value = describe;
+        document.getElementById("showProducer").value = producer;
     }
 </script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
