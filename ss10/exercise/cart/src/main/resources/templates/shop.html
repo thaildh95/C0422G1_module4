@@ -17,7 +17,7 @@
         <tr>
             <td th:text="${product.name}"></td>
             <td th:text="${product.price}"></td>
-            <td><a th:href="@{/add(id=${product.id},expression='+')}">Mua ngay</a></td>
+            <td><a th:href="@{/add(id=${product.id})}">Mua ngay</a></td>
         </tr>
     </th:block>
 </table>

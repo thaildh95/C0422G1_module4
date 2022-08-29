@@ -16,9 +16,10 @@ import java.util.Map;
 public class ShopController {
     @Autowired
     private CartService cartService;
+
     @GetMapping("/shopping-cart")
-    public  String goCart(Model model, @SessionAttribute Map<Product, Integer> cart){
-        model.addAttribute("cart",cart);
+    public String goCart(Model model, @SessionAttribute Map<Product, Integer> cart) {
+        model.addAttribute("cart", cart);
         model.addAttribute("total", cartService.countTotalPayment());
         return "cart";
     }

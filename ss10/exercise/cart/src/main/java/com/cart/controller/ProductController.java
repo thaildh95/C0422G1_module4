@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Map;
 import java.util.Optional;
 
 @Controller
@@ -26,21 +27,19 @@ public class ProductController {
 
     @GetMapping("/")
     public String showShop(Model model) {
-        model.addAttribute("products",productService.findAll());
+        model.addAttribute("products", productService.findAll());
         return "/shop";
     }
 
-    @GetMapping("/add/{id}")
-    public String addToCart(@PathVariable Integer id, @ModelAttribute Cart cart, @RequestParam("action") String action) {
+    @GetMapping(value = {"/add"})
+    public String addToCart(@RequestParam(defaultValue = "0") Integer id, String expression, Model model, @SessionAttribute Map<Product, Integer> cart) {
         Optional<Product> productOptional = productService.findById(id);
         if (!productOptional.isPresent()) {
             return "/error.404";
         }
-        if (action.equals("show")) {
-            cartService.addProduct(productOptional.get());
-            return "redirect:/shopping-cart";
-        }
-        cartService.addProduct(productOptional.get());
-        return "redirect:/shop";
+        cartService.changeCart(cart, id, expression);
+        model.addAttribute("total", cartService.countTotalPayment());
+        model.addAttribute("cart", cart);
+        return "cart";
     }
 }
