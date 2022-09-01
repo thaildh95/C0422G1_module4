@@ -13,4 +13,5 @@ public interface ICatalogyService {
 
     Page<Catalogy> findAllCatalogy(String name, Pageable pageable);
     List<Catalogy> findAll(Pageable pageable);
+    Catalogy findById(Integer id);
 }

@@ -21,6 +21,11 @@ public class CatalogyService implements ICatalogyService {
     }
 
     @Override
+    public Catalogy findById(Integer id) {
+        return repository.findById(id);
+    }
+
+    @Override
     public Page<Catalogy> findAllCatalogy(String name, Pageable pageable) {
         return repository.findAllByNameCatalogy(name,pageable);
     }

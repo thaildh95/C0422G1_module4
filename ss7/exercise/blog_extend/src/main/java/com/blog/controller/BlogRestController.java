@@ -40,5 +40,9 @@ public class BlogRestController {
         }
         return new ResponseEntity<>(blog,HttpStatus.OK);
     }
-
+    @PostMapping("/create")
+    public ResponseEntity<Page<Void>> create(@RequestBody Blog blog) {
+        blogService.save(blog);
+        return new ResponseEntity<>(HttpStatus.OK);
+    }
 }
