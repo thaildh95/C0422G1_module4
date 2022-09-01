@@ -16,6 +16,7 @@ public class BlogService implements IBlogService {
     private IBlogRepository repository;
 
 
+
     @Override
     public List<Blog> findAll() {
         return repository.findAll();
@@ -39,5 +40,15 @@ public class BlogService implements IBlogService {
     @Override
     public Page<Blog> findAllByDetailAndTitle(String keyword, String title, Pageable pageable) {
         return repository.findByTitleContainingAndDetailContaining(keyword,title,pageable);
+    }
+
+    @Override
+    public Page<Blog> findAllCatalogy(String name, Pageable pageable) {
+        return repository.find;
+    }
+
+    @Override
+    public Page<Blog> findAllPage(Pageable pageable) {
+        return repository.findAll(pageable);
     }
 }

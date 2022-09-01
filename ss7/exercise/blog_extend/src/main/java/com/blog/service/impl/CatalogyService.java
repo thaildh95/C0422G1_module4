@@ -26,6 +26,11 @@ public class CatalogyService implements ICatalogyService {
     }
 
     @Override
+    public List<Catalogy> findAll(Pageable pageable) {
+        return null;
+    }
+
+    @Override
     public Catalogy save(Catalogy catalogy) {
         return repository.save(catalogy);
     }

@@ -8,6 +8,9 @@ import java.util.List;
 
 public interface ICatalogyService {
     Catalogy save(Catalogy catalogy);
-    Page<Catalogy>findAllCatalogy(String name, Pageable pageable);
+
     List<Catalogy> findAll();
+
+    Page<Catalogy> findAllCatalogy(String name, Pageable pageable);
+    List<Catalogy> findAll(Pageable pageable);
 }

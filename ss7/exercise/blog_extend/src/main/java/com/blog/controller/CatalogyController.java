@@ -15,7 +15,7 @@ public class CatalogyController {
     @GetMapping("catalogy")
     public String goCatalogy(Model model)
     {
-        model.addAttribute("catalogyList",catalogyService.findAll());
+//        model.addAttribute("catalogyList",catalogyService.findAll());
         return "/catalogy";
     }
 

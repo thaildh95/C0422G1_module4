@@ -4,7 +4,6 @@ import com.blog.model.Blog;
 import com.blog.service.IBlogService;
 import com.blog.service.ICatalogyService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.web.PageableDefault;
@@ -24,7 +23,7 @@ public class BlogController {
     private ICatalogyService catalogyService;
 
 
-    @GetMapping("/")
+    @GetMapping("")
     public String goHome(Model model,
                          @PageableDefault(value = 3) Pageable pageable,
                          @RequestParam Optional<String> detail,
@@ -41,7 +40,7 @@ public class BlogController {
         model.addAttribute("blogList", service.findAllByDetailAndTitle(detailValue, titleValue, pageable));
         model.addAttribute("detailValue", detailValue);
         model.addAttribute("titleValue", titleValue);
-//        model.addAttribute("catalogyList",catalogyService.findAll());
+        model.addAttribute("catalogyList",catalogyService.findAll(pageable));
         return "list";
     }
 
