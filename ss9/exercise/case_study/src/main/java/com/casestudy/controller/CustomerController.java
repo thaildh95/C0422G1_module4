@@ -3,7 +3,6 @@ package com.casestudy.controller;
 import com.casestudy.model.person.customer.Customer;
 import com.casestudy.service.ICustomerService;
 import com.casestudy.service.ICustomerTypeService;
-import com.sun.org.apache.xpath.internal.operations.Mod;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
@@ -16,7 +15,8 @@ import java.util.Optional;
 
 @Controller
 @RequestMapping("/customer")
-public class CustomerController {
+public class
+CustomerController {
     @Autowired
     private ICustomerService service;
     @Autowired

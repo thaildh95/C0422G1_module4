@@ -1,8 +1,18 @@
 package com.casestudy.model.person.employee;
 
+import javax.persistence.*;
+import java.util.List;
+
+@Entity
+@Table(name = "position")
 public class Position {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int employeeId;
     private String positionName;
+
+    @OneToMany(mappedBy = "positionType")
+    private List<Employee> employeeList;
 
     public Position() {
     }
@@ -10,6 +20,7 @@ public class Position {
     public Position(int employeeId, String positionName) {
         this.employeeId = employeeId;
         this.positionName = positionName;
+
     }
 
     public int getEmployeeId() {
@@ -26,5 +37,13 @@ public class Position {
 
     public void setPositionName(String positionName) {
         this.positionName = positionName;
+    }
+
+    public List<Employee> getEmployeeList() {
+        return employeeList;
+    }
+
+    public void setEmployeeList(List<Employee> employeeList) {
+        this.employeeList = employeeList;
     }
 }

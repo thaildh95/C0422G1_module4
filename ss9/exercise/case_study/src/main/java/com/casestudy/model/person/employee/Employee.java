@@ -1,69 +1,143 @@
 package com.casestudy.model.person.employee;
 
-import com.casestudy.model.person.Person;
 
-public class Employee extends Person {
-    private int employeeId;
-    private double salary;
-    private int positionId;
-    private int partId;
-    private int levelId;
+import javax.persistence.*;
 
+@Entity
+@Table(name = "employee")
+public class Employee {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer employeeId;
+    private  String name;
+    private String dayOfBirth;
+    private int gender;
+    private String idCard;
+    private String phoneNumber;
+    private String Email;
+    private String address;
+    private String salary;
 
-    public Employee(int employeeId, double salary, int positionId, int partId, int levelId) {
-        this.employeeId = employeeId;
-        this.salary = salary;
-        this.positionId = positionId;
-        this.partId = partId;
-        this.levelId = levelId;
+    @ManyToOne
+    private Level levelType;
+
+    @ManyToOne
+    private Part partType;
+
+    @ManyToOne
+    private Position positionType;
+
+    public Employee() {
     }
 
-    public Employee(String name, String dayOfBirth, String idCard, String phoneNumber, String email, String address, int employeeId, double salary, int positionId, int partId, int levelId) {
-        super(name, dayOfBirth, idCard, phoneNumber, email, address);
+    public Employee(Integer employeeId, String name, String dayOfBirth, int gender, String idCard, String phoneNumber, String email, String address, String salary, Level levelType, Part partType, Position positionType) {
         this.employeeId = employeeId;
+        this.name = name;
+        this.dayOfBirth = dayOfBirth;
+        this.gender = gender;
+        this.idCard = idCard;
+        this.phoneNumber = phoneNumber;
+        Email = email;
+        this.address = address;
         this.salary = salary;
-        this.positionId = positionId;
-        this.partId = partId;
-        this.levelId = levelId;
+        this.levelType = levelType;
+        this.partType = partType;
+        this.positionType = positionType;
     }
 
-    public int getEmployeeId() {
+    public Integer getEmployeeId() {
         return employeeId;
     }
 
-    public void setEmployeeId(int employeeId) {
+    public void setEmployeeId(Integer employeeId) {
         this.employeeId = employeeId;
     }
 
-    public double getSalary() {
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public String getDayOfBirth() {
+        return dayOfBirth;
+    }
+
+    public void setDayOfBirth(String dayOfBirth) {
+        this.dayOfBirth = dayOfBirth;
+    }
+
+    public int getGender() {
+        return gender;
+    }
+
+    public void setGender(int gender) {
+        this.gender = gender;
+    }
+
+    public String getIdCard() {
+        return idCard;
+    }
+
+    public void setIdCard(String idCard) {
+        this.idCard = idCard;
+    }
+
+    public String getPhoneNumber() {
+        return phoneNumber;
+    }
+
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
+    public String getEmail() {
+        return Email;
+    }
+
+    public void setEmail(String email) {
+        Email = email;
+    }
+
+    public String getAddress() {
+        return address;
+    }
+
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public String getSalary() {
         return salary;
     }
 
-    public void setSalary(double salary) {
+    public void setSalary(String salary) {
         this.salary = salary;
     }
 
-    public int getPositionId() {
-        return positionId;
+    public Level getLevelType() {
+        return levelType;
     }
 
-    public void setPositionId(int positionId) {
-        this.positionId = positionId;
+    public void setLevelType(Level levelType) {
+        this.levelType = levelType;
     }
 
-    public int getPartId() {
-        return partId;
+    public Part getPartType() {
+        return partType;
     }
 
-    public void setPartId(int partId) {
-        this.partId = partId;
+    public void setPartType(Part partType) {
+        this.partType = partType;
     }
 
-    public int getLevelId() {
-        return levelId;
+    public Position getPositionType() {
+        return positionType;
     }
 
-    public void setLevelId(int levelId) {
-        this.levelId = levelId;
+    public void setPositionType(Position positionType) {
+        this.positionType = positionType;
     }
 }

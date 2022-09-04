@@ -1,30 +1,18 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: Admin
-  Date: 8/4/2022
-  Time: 11:46 PM
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<html>
+
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Title</title>
-    <link rel="stylesheet" href="/other/bootstrap/css/bootstrap.min.css">
-    <style>
-
-
-    </style>
+    <link rel="stylesheet" href="/bootstrap-5.0.2-dist/css/bootstrap.css">
 </head>
 
 <body>
-<%@include file="/view/include/head.jsp" %>
 <div class="container-fluid position-relative">
     <div class="row">
         <div class="col-lg-10 d-flex justify-content-center  position-absolute" style="top: 7%">
             <div class="row" style="width: 95%">
-                <div class="col-lg-12 text-center"><h2>Add New Service</h2></div>
+                <div class="col-lg-12 text-center"><h2>EDIT SERVICE</h2></div>
                 <div class="col-lg-12">
-                    <form class="row" action="/facility" method="post">
+                    <form class="row" action="/facility/edit" method="post">
                         <div class="col-lg-2 ps-5">
                             <div class="form-check" onclick="showInput(roomInput.value)">
                                 <input type="hidden" value="${facility.facilityTypeId}" id="onload">
@@ -51,36 +39,31 @@
                             <div class="row">
                                 <div class="col-lg-6 ps-5 pe-5">
                                     <div class="row pb-4">
-                                        <span>Name:</span><span class="text-danger">${nameErr}</span>
+                                        <span>Name:</span><span class="text-danger"></span>
                                         <input type="text" name="name" class="form-control" placeholder="Service name"
-                                               aria-label="Service name" value="${facility.name}">
+                                               aria-label="Service name" th:field="${facility.facilityName}">
                                     </div>
                                     <div class="row pb-4">
-                                        <span>Area:</span><span class="text-danger">${areaErr}</span>
+                                        <span>Area:</span><span class="text-danger"></span>
                                         <input type="number" name="area" class="form-control" placeholder="Area"
-                                               aria-label="Area" value="${facility.area}">
+                                               aria-label="Area" th:field="${facility.area}">
                                     </div>
                                     <div class="row pb-4">
-                                        <span>Cost:</span><span class="text-danger">${costErr}</span>
+                                        <span>Cost:</span><span class="text-danger"></span>
                                         <input type="number" name="cost" class="form-control" placeholder="Cost"
-                                               aria-label="Cost" value="${facility.cost}">
+                                               aria-label="Cost" th:field="${facility.rentCost}">
                                     </div>
                                     <div class="row pb-4">
-                                        <span>Max people</span><span class="text-danger">${maxPeopleErr}</span>
+                                        <span>Max people</span><span class="text-danger"></span>
                                         <input type="number" name="people" class="form-control" placeholder="Max people"
-                                               aria-label="Max people" value="${facility.maxPeople}">
+                                               aria-label="Max people" th:field="${facility.maxPeople}">
                                     </div>
                                     <div class="row pb-4">
                                         <span>Rental type</span>
-                                        <select class="form-control" name="rentalType">
-                                            <%--                                            <c:forEach items="${rentTypeList}" var="rentType">--%>
-                                            <%--                                                <option value="${rentType.rentId}">${rentType.rentTypeName}</option>--%>
-                                            <%-- option                                       </c:forEach>--%>
-
-                                            <option value="1">Thuê theo năm</option>
-                                            <option value="2">Thuê theo tháng</option>
-                                            <option value="3">Thuê theo ngày</option>
-                                            <option value="4">Thuê theo giờ</option>
+                                        <label class="form-label"></label>
+                                        <select name="rent_type_id"  class="form-select" required th:field="*{rentalType}">
+                                            <option value="None" disabled selected>Chọn kiểu thuê</option>
+                                            <option th:each="rentalTypeChoice : ${rentalType}" th:value="${rentalTypeChoice.idRentalType}" th:text="${rentalTypeChoice.rentalTypeName}"> </option>
                                         </select>
                                     </div>
                                     <div class="row">
@@ -102,7 +85,7 @@
                                                aria-label="Other convenience">
                                     </div>
                                     <div class="row pb-4" style="display: none" id="floors">
-                                        <span>Number of floors</span><span class="text-danger">${floorErr}</span>
+                                        <span>Number of floors</span><span class="text-danger"></span>
                                         <input id="floorsInput" type="number" name="floors" class="form-control"
                                                placeholder="Number of floors" aria-label="Number of floor"
                                                value="${facility.floors}">
@@ -114,7 +97,7 @@
                                                aria-label="Facility free">
                                     </div>
                                     <div class="row pb-4" style="display: none" id="poolArea">
-                                        <span>Pool area:</span><span class="text-danger">${poolErr}</span>
+                                        <span>Pool area:</span><span class="text-danger"></span>
                                         <input id="poolAreaInput" type="number" name="Pool" class="form-control"
                                                placeholder="Pool area" aria-label="Pool area"
                                                value="${facility.poolArea}">
@@ -167,7 +150,7 @@
         }
     }
 </script>
-<script src="/other/bootstrap/js/bootstrap.min.js"></script>
-<script src="/other/bootstrap/jquery/jquery-3.6.0.min.js"></script>
+<script src="bootstrap-5.0.2-dist/js/bootstrap.min.js"></script>
+<script src="bootstrap-5.0.2-dist/jquery/jquery-3.6.0.min.js"></script>
 </body>
 </html>

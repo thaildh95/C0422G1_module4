@@ -1,15 +1,27 @@
 package com.casestudy.model.person.employee;
 
+
+import javax.persistence.*;
+import java.util.List;
+
+@Entity
+@Table(name = "level")
 public class Level {
-    private int levelId;
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer levelId;
     private String levelName;
 
-    public Level(int levelId, String levelName) {
-        this.levelId = levelId;
-        this.levelName = levelName;
-    }
+    @OneToMany(mappedBy = "levelType")
+    private List<Employee> employeeList;
 
     public Level() {
+    }
+
+    public Level(Integer levelId, String levelName) {
+        this.levelId = levelId;
+        this.levelName = levelName;
+
     }
 
     public int getLevelId() {
@@ -27,4 +39,5 @@ public class Level {
     public void setLevelName(String levelName) {
         this.levelName = levelName;
     }
+
 }
