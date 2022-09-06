@@ -20,7 +20,7 @@ public class SmartphoneController {
     private ISmartphoneService smartphoneService;
 
     @GetMapping("/list")
-    public ResponseEntity<Page<Smartphone>> goPage(@PageableDefault(6) Pageable pageable,
+    public ResponseEntity<Page<Smartphone>> goPage(@PageableDefault(5) Pageable pageable,
                                                    @RequestParam Optional<String> name) {
 
         String keyName = name.orElse("");
@@ -38,15 +38,18 @@ public class SmartphoneController {
     }
 
     @GetMapping("/update/{id}")
-    public ResponseEntity<?> goUpdate(@PathVariable String id) {
-        Smartphone smartphone = smartphoneService.findById(Integer.valueOf(id));
+    public ResponseEntity<?> goUpdate(@PathVariable Integer id) {
+        Smartphone smartphone = smartphoneService.findById(id);
         return new ResponseEntity<>(smartphone, HttpStatus.OK);
     }
 
-    @PutMapping("/update")
-    public ResponseEntity<Smartphone> update(@RequestBody Smartphone smartphone, @RequestParam Integer id) {
-        smartphone.setId(smartphone.getId());
-        smartphoneService.save(smartphone);
+    @PatchMapping("/update")
+    public ResponseEntity<Void> update(@RequestBody Smartphone smartphone) {
+        try {
+            this.smartphoneService.save(smartphone);
+        } catch (Exception e) {
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
         return new ResponseEntity<>(HttpStatus.OK);
     }
 
