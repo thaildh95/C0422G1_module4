@@ -1,7 +1,5 @@
 package com.blog.config;
 
-
-
 import com.blog.repository.UserDetailsServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -43,15 +41,15 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
         http.authorizeRequests().antMatchers("/", "/login", "/logout").permitAll();
 
-        http.authorizeRequests().antMatchers("/userInfo").access("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')");
+        http.authorizeRequests().antMatchers("/userInfo","/blog").access("hasAnyRole('ROLE_USER', 'ROLE_ADMIN')");
 
-        http.authorizeRequests().antMatchers("/admin").access("hasRole('ROLE_ADMIN')");
+        http.authorizeRequests().antMatchers("/admin","/create","/delete","/update/**").access("hasRole('ROLE_ADMIN')");
 
         http.authorizeRequests().and().exceptionHandling().accessDeniedPage("/403");
         http.authorizeRequests().and().formLogin()
                 .loginProcessingUrl("/j_spring_security_check")
-                .loginPage("/login")//
-                .defaultSuccessUrl("/userAccountInfo")
+                .loginPage("/login")
+                .defaultSuccessUrl("/userInfo")
                 .failureUrl("/login?error=true")
                 .usernameParameter("username")
                 .passwordParameter("password")

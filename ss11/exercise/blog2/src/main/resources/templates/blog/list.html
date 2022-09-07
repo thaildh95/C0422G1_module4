@@ -11,7 +11,7 @@
 <div th:replace="~{header::navbar}"></div>
 <div class="container">
     <h1 class="text-danger text-center">Blog List</h1>
-    <span><a href="/create" class="btn btn-info m-3 text-light">Create Blog</a></span>
+    <span><a href="/create" class="btn btn-info m-3 text-light" th:if="${userInfo.contains('ADMIN')}">Create Blog</a></span>
     <form action="/blog" method="get">
   <span class="d-flex m-3">
       <input class="form-control me-2 w-25 " type="text" placeholder="Name"
@@ -31,8 +31,8 @@
             <th>Content</th>
             <th>Author</th>
             <th>Category</th>
-            <th>Update</th>
-            <th>Delete</th>
+            <th  th:if="${userInfo.contains('ADMIN')}">Update</th>
+            <th  th:if="${userInfo.contains('ADMIN')}">Delete</th>
             <th>Detail</th>
         </tr>
         <tr th:each="blog,loop :${blogPage}">
@@ -42,10 +42,10 @@
             <td th:text="${blog.content}"></td>
             <td th:text="${blog.author}"></td>
             <td th:text="${blog.category.name}"></td>
-            <td><a th:href="@{/update/{id}(id=${blog.id})}">
+            <td  th:if="${userInfo.contains('ADMIN')}"><a th:href="@{/update/{id}(id=${blog.id})}">
                 <buton class="btn btn-success">Update</buton>
             </a></td>
-            <td>
+            <td th:if="${userInfo.contains('ADMIN')}">
                 <button th:attr="onclick=|infoToModal('${blog.id}','${blog.name}')|" class="btn btn-danger"
                         type="button" data-bs-toggle="modal" data-bs-target="#deleteModal">
                     Delete

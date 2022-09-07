@@ -16,7 +16,7 @@ public class MainController {
     public String welcomePage(Model model) {
         model.addAttribute("title", "Welcome");
         model.addAttribute("message", "This is welcome page!");
-        return "welcomePage";
+        return "welcome";
     }
 
     @RequestMapping(value = "/admin", method = RequestMethod.GET)
@@ -55,7 +55,7 @@ public class MainController {
         String userInfo = WebUtils.toString(loginedUser);
         model.addAttribute("userInfo", userInfo);
 
-        return "userInfo";
+        return "redirect:/blog";
     }
 
     @RequestMapping(value = "/403", method = RequestMethod.GET)
