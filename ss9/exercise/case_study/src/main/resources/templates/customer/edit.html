@@ -9,7 +9,7 @@
 <div class="container w-50 mt-4 p-2 mb-4" style="border: 1px solid grey; border-radius: 15px">
     <h3 align="center">THÊM MỚI KHÁCH HÀNG</h3>
     <form class="row g-3" action="/customer/edit" method="post" th:object="${customer}">
-
+        <input hidden th:field="*{customerId}"> </input>
         <div class="col-md-12">
             <label for="name" class="form-label">Họ tên</label>
             <input type="text" class="form-control" id="name" name="name" th:field="*{name}">

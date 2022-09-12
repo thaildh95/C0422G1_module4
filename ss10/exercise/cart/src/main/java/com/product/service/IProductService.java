@@ -1,6 +1,6 @@
-package com.cart.service;
+package com.product.service;
 
-import com.cart.model.Product;
+import com.product.model.Product;
 
 import java.util.List;
 import java.util.Optional;

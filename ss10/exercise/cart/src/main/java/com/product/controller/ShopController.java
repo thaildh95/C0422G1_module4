@@ -1,4 +1,4 @@
-package com.cart.controller;
+package com.product.controller;
 
 import com.product.model.Cart;
 import org.springframework.stereotype.Controller;

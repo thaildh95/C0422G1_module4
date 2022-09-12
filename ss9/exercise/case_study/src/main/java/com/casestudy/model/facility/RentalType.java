@@ -8,7 +8,7 @@ import java.util.List;
 public class RentalType {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int idRentalType;
+    private Integer idRentalType;
     private String rentalTypeName;
 
     @OneToMany(mappedBy = "rentalType")

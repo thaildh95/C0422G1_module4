@@ -44,7 +44,7 @@ public class BlogService implements IBlogService {
 
     @Override
     public Page<Blog> findAllCatalogy(String name, Pageable pageable) {
-        return repository.find;
+        return repository.findAll(pageable);
     }
 
     @Override

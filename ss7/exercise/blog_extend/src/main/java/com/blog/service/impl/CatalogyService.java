@@ -22,7 +22,7 @@ public class CatalogyService implements ICatalogyService {
 
     @Override
     public Catalogy findById(Integer id) {
-        return repository.findById(id);
+        return repository.findById(id).get();
     }
 
     @Override

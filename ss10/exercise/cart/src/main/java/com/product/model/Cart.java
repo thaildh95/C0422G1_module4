@@ -1,7 +1,5 @@
 package com.product.model;
 
-import com.cart.model.Product;
-
 import java.util.HashMap;
 import java.util.Map;
 

@@ -1,6 +1,6 @@
-package com.cart.service.impl;
+package com.product.service.impl;
 import com.product.model.Cart;
-import com.cart.model.Product;
+import com.product.model.Product;
 import org.springframework.stereotype.Service;
 
 import java.util.Map;

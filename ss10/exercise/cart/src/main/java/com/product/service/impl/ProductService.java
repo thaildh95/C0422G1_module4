@@ -1,8 +1,8 @@
 package com.product.service.impl;
 
-import com.cart.model.Product;
-import com.cart.repository.IProductRepository;
-import com.cart.service.IProductService;
+import com.product.model.Product;
+import com.product.repository.IProductRepository;
+import com.product.service.IProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
