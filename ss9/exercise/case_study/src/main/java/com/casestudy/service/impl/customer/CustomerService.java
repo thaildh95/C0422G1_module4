@@ -15,29 +15,11 @@ public class CustomerService implements ICustomerService {
     @Autowired
     private ICustomerRepository repository;
 
-    @Override
-    public Page<Customer> findAllByName(String name, Pageable pageable) {
-        return repository.findAllByNameContaining(name,pageable) ;
-    }
-
-    @Override
-    public Customer save(Customer customer) {
-        return repository.save(customer);
-    }
-
-    @Override
-    public Customer findById(int id) {
-        return repository.findById(id).get();
-    }
 
     @Override
     public List<Customer> findAll() {
         return repository.findAll();
     }
 
-    @Override
-    public void delete(int id) {
-        repository.deleteById(id);
-
-    }
+  
 }

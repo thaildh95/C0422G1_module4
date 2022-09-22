@@ -11,72 +11,48 @@
 <body>
 <div th:replace="head::head"></div>
 <div class="container w-50 mt-4 p-2 mb-4" style="border: 1px solid grey; border-radius: 15px">
-<h3 align="center">THÊM MỚI KHÁCH HÀNG</h3>
-<form class="row g-3" action="/customer/add" method="post" th:object="${customerDto}">
+    <h3 align="center">Create New Trade</h3>
+    <form class="row g-3" action="/customer/add" method="post" th:object="${trade}">
 
-    <div class="col-md-12">
-        <label for="name" class="form-label">Họ tên</label>
-        <input type="text" class="form-control" id="name" name="name" th:field="*{name}">
+        <div class="col-md-12 " id="s22">
+            <label for="tradeSerial" class="form-label">Trade Serial</label>
+            <input type="text" class="form-control" id="tradeSerial" name="dayTrade" th:field="*{tradeSerial}">
 
-        <div class="mb-4 text-danger" th:errors="*{name}">
         </div>
 
-    </div>
-    <div class="col-md-12">
-        <label for="birthday" class="form-label">Ngày sinh </label>
-        <input type="date" class="form-control" id="birthday" name="birthday" th:field="*{dayOfBirth}">
-
-        <div class="mb-4 text-danger" th:errors="*{dayOfBirth}">
+        <div class="col-md-12">
+            <label class="form-label">Customer</label>
+            <select name="customer_type_id" class="form-select" required th:field="*{customerId}">
+                <option th:each="customers : ${customerList}" th:value="${customers.customerId}"
+                        th:text="${customers.name}"></option>
+            </select>
         </div>
-    </div>
-    <div class="col-md-12">
-        <label  class="form-label me-4">Giới tính </label>
-        <select class="form-select" id="" th:field="*{gender}">
-            <option value="1">Nam</option>
-            <option value="2">Nữ</option>
+
+        <div class="col-md-12 " id="s2">
+            <label for="date" class="form-label">Trade day</label>
+            <input type="date" class="form-control" id="date" name="dayTrade" th:field="*{tradeDay}">
+
+        </div>
+        <label class="form-label">Facility Type</label>
+        <select name="facility_type" id="type" th:fied="*{facilityType}">
+            <option value="House">Nhà Đất</option>
+            <option value="Land">Đất</option>
+
         </select>
-    </div>
-    <div class="col-md-12">
-        <label for="id_card" class="form-label">Số CMND</label>
-        <input type="text" class="form-control" id="id_card"  name="id_card"  th:field="*{idCard}" >
-
-        <div class="mb-4 text-danger" th:errors="*{idCard}">
+        <div>
+            <label for="date" class="form-label">Bill</label>
+            <input type="number" class="form-control" id="bill" name="dayTrade" th:field="*{bill}">
         </div>
-    </div>
-    <div class="col-md-12">
-        <label for="phone" class="form-label">Số Điện Thoại</label>
-        <input type="text" class="form-control" id="phone" name="phone" th:field="*{phoneNumber}" >
-        <div class="mb-4 text-danger" th:errors="*{phoneNumber}">
+
+        <div>
+            <label for="Area" class="form-label">Area</label>
+            <input type="number" class="form-control" id="Area" name="dayTrade" th:field="*{area}">
         </div>
-    </div>
-    <div class="col-md-12 " id="s1" >
-        <label for="email" class="form-label">Email </label>
-        <input type="text" class="form-control" id="email" name="email" th:field="*{email}">
-        <div class="mb-4 text-danger" th:errors="*{email}">
+
+        <div class="col-12 ">
+            <button type="submit" class="btn btn-primary">Gửi</button>
         </div>
-    </div>
-
-    <div class="col-md-12">
-        <label class="form-label">Loại khách </label>
-        <select name="customer_type_id"  class="form-select" required th:field="*{customerType}">
-            <option value="None" disabled selected>Chọn loại khách</option>
-            <option th:each="customerType : ${typeCustomer}" th:value="${customerType.getTypeCustomerId()}" th:text="${customerType.getCustomerTypeName()}"> </option>
-        </select>
-    </div>
-
-    <div class="col-md-12 " id="s2" >
-        <label for="address" class="form-label">Địa chỉ </label>
-        <input type="text" class="form-control" id="address" name="address" th:field="*{address}">
-
-        <div class="mb-4 text-danger" th:errors="*{address}">
-        </div>
-    </div>
-
-
-    <div class="col-12 ">
-        <button type="submit" class="btn btn-primary">Gửi</button>
-    </div>
-</form>
+    </form>
 </div>
 
 <div th:replace="foot::foot"></div>

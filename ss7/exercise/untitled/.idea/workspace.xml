@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="88053311-aced-4048-97f2-1b0119631bb7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../ss12/exam/src/main/resources/static/bootstrap-5.0.2-dist/css/bootstrap-grid.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12/exam/src/main/resources/static/bootstrap-5.0.2-dist/css/bootstrap-grid.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12/exam/src/main/resources/static/bootstrap-5.0.2-dist/css/bootstrap-grid.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12/exam/src/main/resources/static/bootstrap-5.0.2-dist/css/bootstrap-grid.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12/exam/src/main/resources/static/bootstrap-5.0.2-dist/css/bootstrap-grid.rtl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12/exam/src/main/resources/static/bootstrap-5.0.2-dist/css/bootstrap-grid.rtl.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12/exam/src/main/resources/static/bootstrap-5.0.2-dist/css/bootstrap-grid.rtl.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12/exam/src/main/resources/static/bootstrap-5.0.2-dist/css/bootstrap-grid.rtl.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12/exam/src/main/resources/static/bootstrap-5.0.2-dist/css/bootstrap-reboot.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12/exam/src/main/resources/static/bootstrap-5.0.2-dist/css/bootstrap-reboot.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12/exam/src/main/resources/static/bootstrap-5.0.2-dist/css/bootstrap-reboot.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12/exam/src/main/resources/static/bootstrap-5.0.2-dist/css/bootstrap-reboot.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12/exam/src/main/resources/static/bootstrap-5.0.2-dist/css/bootstrap-reboot.rtl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12/exam/src/main/resources/static/bootstrap-5.0.2-dist/css/bootstrap-reboot.rtl.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12/exam/src/main/resources/static/bootstrap-5.0.2-dist/css/bootstrap-reboot.rtl.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12/exam/src/main/resources/static/bootstrap-5.0.2-dist/css/bootstrap-reboot.rtl.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12/exam/src/main/resources/static/bootstrap-5.0.2-dist/css/bootstrap-utilities.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12/exam/src/main/resources/static/bootstrap-5.0.2-dist/css/bootstrap-utilities.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12/exam/src/main/resources/static/bootstrap-5.0.2-dist/css/bootstrap-utilities.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12/exam/src/main/resources/static/bootstrap-5.0.2-dist/css/bootstrap-utilities.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12/exam/src/main/resources/static/bootstrap-5.0.2-dist/css/bootstrap-utilities.rtl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12/exam/src/main/resources/static/bootstrap-5.0.2-dist/css/bootstrap-utilities.rtl.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12/exam/src/main/resources/static/bootstrap-5.0.2-dist/css/bootstrap-utilities.rtl.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12/exam/src/main/resources/static/bootstrap-5.0.2-dist/css/bootstrap-utilities.rtl.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12/exam/src/main/resources/static/bootstrap-5.0.2-dist/css/bootstrap.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12/exam/src/main/resources/static/bootstrap-5.0.2-dist/css/bootstrap.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12/exam/src/main/resources/static/bootstrap-5.0.2-dist/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12/exam/src/main/resources/static/bootstrap-5.0.2-dist/css/bootstrap.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12/exam/src/main/resources/static/bootstrap-5.0.2-dist/css/bootstrap.rtl.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12/exam/src/main/resources/static/bootstrap-5.0.2-dist/css/bootstrap.rtl.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12/exam/src/main/resources/static/bootstrap-5.0.2-dist/css/bootstrap.rtl.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12/exam/src/main/resources/static/bootstrap-5.0.2-dist/css/bootstrap.rtl.min.css.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12/exam/src/main/resources/static/bootstrap-5.0.2-dist/jquery/jquery-3.6.0.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12/exam/src/main/resources/static/bootstrap-5.0.2-dist/js/bootstrap.bundle.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12/exam/src/main/resources/static/bootstrap-5.0.2-dist/js/bootstrap.bundle.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12/exam/src/main/resources/static/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12/exam/src/main/resources/static/bootstrap-5.0.2-dist/js/bootstrap.bundle.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12/exam/src/main/resources/static/bootstrap-5.0.2-dist/js/bootstrap.esm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12/exam/src/main/resources/static/bootstrap-5.0.2-dist/js/bootstrap.esm.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12/exam/src/main/resources/static/bootstrap-5.0.2-dist/js/bootstrap.esm.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12/exam/src/main/resources/static/bootstrap-5.0.2-dist/js/bootstrap.esm.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12/exam/src/main/resources/static/bootstrap-5.0.2-dist/js/bootstrap.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12/exam/src/main/resources/static/bootstrap-5.0.2-dist/js/bootstrap.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12/exam/src/main/resources/static/bootstrap-5.0.2-dist/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12/exam/src/main/resources/static/bootstrap-5.0.2-dist/js/bootstrap.min.js.map" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12/exam/src/main/resources/templates/add.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12/exam/src/main/resources/templates/edit.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12/exam/src/main/resources/templates/foot.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12/exam/src/main/resources/templates/head.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12/exam/src/main/resources/templates/home.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss12/exam/src/main/resources/templates/list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/java/com/casestudy/controller/TradeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/java/com/casestudy/model/person/customer/TradeInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/java/com/casestudy/repository/customer/ITradeRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/java/com/casestudy/service/ITradeService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/java/com/casestudy/service/impl/customer/TradeService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/java/com/casestudy/controller/ContractController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/java/com/casestudy/controller/CustomerController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/java/com/casestudy/controller/CustomerController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/java/com/casestudy/controller/FacilityController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/java/com/casestudy/controller/HomeController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/java/com/casestudy/dto/ContractPage.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/java/com/casestudy/dto/CustomerDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/java/com/casestudy/dto/FacilityDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/java/com/casestudy/model/contract/AttachFacility.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/java/com/casestudy/model/contract/Contract.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/java/com/casestudy/model/contract/ContractDetail.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/java/com/casestudy/model/facility/Facility.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/java/com/casestudy/model/facility/RentalType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/java/com/casestudy/model/facility/ServiceType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/java/com/casestudy/model/person/Person.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/java/com/casestudy/model/person/customer/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/java/com/casestudy/model/person/customer/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/java/com/casestudy/model/person/customer/CustomerType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/java/com/casestudy/model/person/employee/Employee.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/java/com/casestudy/model/person/employee/Level.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/java/com/casestudy/model/person/employee/Part.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/java/com/casestudy/model/person/employee/Position.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/java/com/casestudy/model/person/employee/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/java/com/casestudy/repository/contract/IAttachFacilityRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/java/com/casestudy/repository/contract/IContractDetailRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/java/com/casestudy/repository/contract/IContractRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/java/com/casestudy/repository/customer/ICustomerTypeRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/java/com/casestudy/repository/employee/IEmployeeRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/java/com/casestudy/repository/employee/ILevelRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/java/com/casestudy/repository/employee/IPartRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/java/com/casestudy/repository/employee/IPositionRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/java/com/casestudy/repository/facility/IFacilityRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/java/com/casestudy/repository/facility/IRentalTypeRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/java/com/casestudy/repository/facility/IServiceTypeRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/java/com/casestudy/service/IAttachFacility.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/java/com/casestudy/service/IContractDetail.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/java/com/casestudy/service/IContractService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/java/com/casestudy/service/ICustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/java/com/casestudy/service/ICustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/java/com/casestudy/service/ICustomerTypeService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/java/com/casestudy/service/IEmployeeService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/java/com/casestudy/service/IFacilityService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/java/com/casestudy/service/ILevelService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/java/com/casestudy/service/IPartService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/java/com/casestudy/service/IPositionService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/java/com/casestudy/service/IRentalTypeService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/java/com/casestudy/service/IServiceTypeService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/java/com/casestudy/service/impl/contract/AttachFacilityService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/java/com/casestudy/service/impl/contract/ContractDetailService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/java/com/casestudy/service/impl/contract/ContractService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/java/com/casestudy/service/impl/customer/CustomerService.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/java/com/casestudy/service/impl/customer/CustomerService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/java/com/casestudy/service/impl/customer/CustomerTypeService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/java/com/casestudy/service/impl/employee/EmployeeService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/java/com/casestudy/service/impl/employee/LevelService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/java/com/casestudy/service/impl/employee/PartService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/java/com/casestudy/service/impl/employee/PositionService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/java/com/casestudy/service/impl/facility/FacilityService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/java/com/casestudy/service/impl/facility/RentalTypeService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/java/com/casestudy/service/impl/facility/ServiceTypeService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/resources/templates/contract/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/resources/templates/contract/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/resources/templates/customer/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/resources/templates/customer/add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/resources/templates/customer/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/resources/templates/customer/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/resources/templates/customer/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/resources/templates/customer/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/resources/templates/facility/add.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/resources/templates/facility/add.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/resources/templates/facility/edit.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/resources/templates/facility/edit.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/resources/templates/facility/list.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/resources/templates/facility/list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/resources/templates/head.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../ss9/exercise/case_study/src/main/resources/templates/head.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="2F0pWorKszrzmTfFdc0npgyYr2r" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="88053311-aced-4048-97f2-1b0119631bb7" name="Default Changelist" comment="" />
+      <created>1663638889306</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1663638889306</updated>
+      <workItem from="1663638895645" duration="75000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="462" y="106" key="FileChooserDialogImpl" timestamp="1663638962516">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="462" y="106" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1663638962516" />
+  </component>
+</project>

@@ -1,0 +1,86 @@
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Title</title>
+    <link rel="stylesheet" href="/bootstrap-5.0.2-dist/css/bootstrap.css">
+    <style>
+
+
+    </style>
+</head>
+
+<body>
+<div th:replace="head::head"></div>
+<div class="container w-50 mt-4 p-2 mb-4" style="border: 1px solid grey; border-radius: 15px">
+<h3 align="center">THÊM MỚI KHÁCH HÀNG</h3>
+<form class="row g-3" action="/customer/add" method="post" th:object="${customerDto}">
+
+    <div class="col-md-12">
+        <label for="name" class="form-label">Họ tên</label>
+        <input type="text" class="form-control" id="name" name="name" th:field="*{name}">
+
+        <div class="mb-4 text-danger" th:errors="*{name}">
+        </div>
+
+    </div>
+    <div class="col-md-12">
+        <label for="birthday" class="form-label">Ngày sinh </label>
+        <input type="date" class="form-control" id="birthday" name="birthday" th:field="*{dayOfBirth}">
+
+        <div class="mb-4 text-danger" th:errors="*{dayOfBirth}">
+        </div>
+    </div>
+    <div class="col-md-12">
+        <label  class="form-label me-4">Giới tính </label>
+        <select class="form-select" id="" th:field="*{gender}">
+            <option value="1">Nam</option>
+            <option value="2">Nữ</option>
+        </select>
+    </div>
+    <div class="col-md-12">
+        <label for="id_card" class="form-label">Số CMND</label>
+        <input type="text" class="form-control" id="id_card"  name="id_card"  th:field="*{idCard}" >
+
+        <div class="mb-4 text-danger" th:errors="*{idCard}">
+        </div>
+    </div>
+    <div class="col-md-12">
+        <label for="phone" class="form-label">Số Điện Thoại</label>
+        <input type="text" class="form-control" id="phone" name="phone" th:field="*{phoneNumber}" >
+        <div class="mb-4 text-danger" th:errors="*{phoneNumber}">
+        </div>
+    </div>
+    <div class="col-md-12 " id="s1" >
+        <label for="email" class="form-label">Email </label>
+        <input type="text" class="form-control" id="email" name="email" th:field="*{email}">
+        <div class="mb-4 text-danger" th:errors="*{email}">
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <label class="form-label">Loại khách </label>
+        <select name="customer_type_id"  class="form-select" required th:field="*{customerType}">
+            <option th:each="customerType : ${typeCustomer}" th:value="${customerType.getTypeCustomerId()}" th:text="${customerType.getCustomerTypeName()}"> </option>
+        </select>
+    </div>
+
+    <div class="col-md-12 " id="s2" >
+        <label for="address" class="form-label">Địa chỉ </label>
+        <input type="text" class="form-control" id="address" name="address" th:field="*{address}">
+
+        <div class="mb-4 text-danger" th:errors="*{address}">
+        </div>
+    </div>
+
+
+    <div class="col-12 ">
+        <button type="submit" class="btn btn-primary">Gửi</button>
+    </div>
+</form>
+</div>
+
+<div th:replace="foot::foot"></div>
+
+<script src="/bootstrap-5.0.2-dist/js/bootstrap.js"></script>
+<script src="/static/bootstrap-5.0.2-dist/jquery/jquery-3.6.0.min.js"></script>
+</body>
+</html>

@@ -1,6 +1,7 @@
 package com.casestudy.model.person.customer;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "customer")
@@ -9,29 +10,20 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer customerId;
     private  String name;
-    private String dayOfBirth;
-    private int gender;
-    private String idCard;
     private String phoneNumber;
     private String Email;
-    private String address;
 
-    @ManyToOne
-    private CustomerType customerType;
 
+    @OneToMany(mappedBy = "customerId")
+    private List<Customer> customerList;
     public Customer() {
     }
 
-    public Customer(Integer customerId, String name, String dayOfBirth, int gender, String idCard, String phoneNumber, String email, String address, CustomerType customerType) {
+    public Customer(Integer customerId, String name, String phoneNumber, String email) {
         this.customerId = customerId;
         this.name = name;
-        this.dayOfBirth = dayOfBirth;
-        this.gender = gender;
-        this.idCard = idCard;
         this.phoneNumber = phoneNumber;
         Email = email;
-        this.address = address;
-        this.customerType = customerType;
     }
 
     public Integer getCustomerId() {
@@ -50,30 +42,6 @@ public class Customer {
         this.name = name;
     }
 
-    public String getDayOfBirth() {
-        return dayOfBirth;
-    }
-
-    public void setDayOfBirth(String dayOfBirth) {
-        this.dayOfBirth = dayOfBirth;
-    }
-
-    public int getGender() {
-        return gender;
-    }
-
-    public void setGender(int gender) {
-        this.gender = gender;
-    }
-
-    public String getIdCard() {
-        return idCard;
-    }
-
-    public void setIdCard(String idCard) {
-        this.idCard = idCard;
-    }
-
     public String getPhoneNumber() {
         return phoneNumber;
     }
@@ -90,19 +58,11 @@ public class Customer {
         Email = email;
     }
 
-    public String getAddress() {
-        return address;
+    public List<Customer> getCustomerList() {
+        return customerList;
     }
 
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    public CustomerType getCustomerType() {
-        return customerType;
-    }
-
-    public void setCustomerType(CustomerType customerType) {
-        this.customerType = customerType;
+    public void setCustomerList(List<Customer> customerList) {
+        this.customerList = customerList;
     }
 }
